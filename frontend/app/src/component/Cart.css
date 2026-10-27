@@ -1,0 +1,141 @@
+.cart-panel {
+  width: 320px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cart-header h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.cart-count {
+  background: #dbeafe;
+  color: #1d4ed8;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.cart-item-name {
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: #0f172a;
+}
+
+.cart-item-qty {
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.empty-cart {
+  color: #64748b;
+  margin: 12px 0 0;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart-row,
+.cart-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #0f172a;
+}
+
+.cart-row {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.cart-footer {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.download-bill-button {
+  width: 100%;
+  margin-top: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #16a34a;
+  color: #ffffff;
+  padding: 12px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.download-bill-button:hover {
+  background: #15803d;
+}
+
+.download-bill-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.app-shell[data-theme="dark"] .cart-panel {
+  background: #111c2d;
+  border-color: #29384d;
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .cart-item {
+  background: #172337;
+}
+
+.app-shell[data-theme="dark"] .cart-item-name,
+.app-shell[data-theme="dark"] .cart-row,
+.app-shell[data-theme="dark"] .cart-footer {
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .cart-item-qty,
+.app-shell[data-theme="dark"] .empty-cart {
+  color: #a8b6c9;
+}
+
+.app-shell[data-theme="dark"] .cart-footer {
+  border-top-color: #394a61;
+}

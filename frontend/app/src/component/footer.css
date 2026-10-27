@@ -1,0 +1,83 @@
+.footer {
+  background: linear-gradient(135deg, #e0f2fe, #ecfeff);
+  color: #0f172a;
+  margin-top: 40px;
+  border-top: 1px solid #bae6fd;
+}
+
+.footer__content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 20px 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer__brand h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.footer__brand p,
+.footer__links li,
+.footer__links a,
+.footer__bottom p {
+  color: #334155;
+}
+
+.footer__links h4 {
+  color: #0f172a;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.footer__links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__links a {
+  text-decoration: none;
+}
+
+.footer__links a:hover {
+  color: #2563eb;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 20px 28px;
+  text-align: center;
+}
+
+.app-shell[data-theme="dark"] .footer {
+  background: linear-gradient(135deg, #142338, #102a31);
+  border-top-color: #25465a;
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .footer__brand h3,
+.app-shell[data-theme="dark"] .footer__links h4 {
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .footer__brand p,
+.app-shell[data-theme="dark"] .footer__links li,
+.app-shell[data-theme="dark"] .footer__links a,
+.app-shell[data-theme="dark"] .footer__bottom p {
+  color: #cbd5e1;
+}
+
+@media (max-width: 700px) {
+  .footer__content {
+    grid-template-columns: 1fr;
+  }
+}

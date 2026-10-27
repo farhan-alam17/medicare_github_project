@@ -1,0 +1,157 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 60px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand__logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #14b8a6, #1d4ed8);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.brand__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 0.96rem;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: #2563eb;
+}
+
+.navbar__link--active {
+  color: #2563eb;
+}
+
+.navbar__admin {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+  border: none;
+  cursor: pointer;
+}
+
+.navbar__admin:hover {
+  background: #1e293b;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar__theme-toggle {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: transparent;
+  color: #334155;
+  cursor: pointer;
+}
+
+.navbar__theme-toggle:hover {
+  background: #f1f5f9;
+}
+
+.navbar__theme-toggle svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.admin__label {
+  display: inline-block;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .navbar__menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .navbar__actions {
+    margin-left: auto;
+  }
+}
+
+.app-shell[data-theme="dark"] .navbar {
+  background: #111827;
+  border-bottom-color: #293548;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.app-shell[data-theme="dark"] .brand__name,
+.app-shell[data-theme="dark"] .navbar__link {
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .navbar__link:hover {
+  color: #60a5fa;
+}
+
+.app-shell[data-theme="dark"] .navbar__link--active {
+  color: #60a5fa;
+}
+
+.app-shell[data-theme="dark"] .navbar__theme-toggle {
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+.app-shell[data-theme="dark"] .navbar__theme-toggle:hover {
+  background: #1e293b;
+}

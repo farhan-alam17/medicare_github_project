@@ -1,0 +1,756 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f6fb;
+  color: #0f172a;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.page-content {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 34px 28px 64px;
+}
+
+.hero-banner {
+  min-height: 355px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 42px 64px;
+  margin-bottom: 54px;
+  border: 1px solid #d9efeb;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 88% 18%, rgba(114, 207, 185, 0.18), transparent 35%),
+    linear-gradient(115deg, #f0faf7, #eff8fb);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #167568;
+  padding: 8px 13px;
+  border: 1px solid #d9efeb;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 19px;
+}
+
+.hero-badge span {
+  color: #e7a744;
+}
+
+.hero-banner h1 {
+  color: #142d35;
+  font-size: clamp(2.4rem, 4.2vw, 3.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  margin-bottom: 15px;
+}
+
+.hero-text {
+  max-width: 440px;
+  color: #5f7278;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 23px;
+  padding: 13px 17px;
+  border-radius: 11px;
+  background: #167568;
+  color: #fff;
+  font-size: 0.91rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  background: #105e54;
+}
+
+.hero-cta span {
+  font-size: 1.2rem;
+}
+
+.hero-assurance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 23px;
+  color: #64777a;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.hero-assurance span span {
+  margin-right: 5px;
+  color: #167568;
+}
+
+.hero-visual {
+  min-height: 260px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.hero-visual__orb {
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(22, 117, 104, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 0 25px rgba(255, 255, 255, 0.2), 0 0 0 50px rgba(22, 117, 104, 0.035);
+}
+
+.hero-visual__card {
+  position: absolute;
+  width: 150px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  transform: rotate(-5deg);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #fff, #f4fbf9);
+  box-shadow: 0 22px 50px rgba(25, 73, 72, 0.15);
+  color: #486568;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.hero-visual__icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #23a58f, #65c9ac);
+  box-shadow: 0 12px 24px rgba(22, 117, 104, 0.22);
+  color: #fff;
+  font-size: 2.7rem;
+}
+
+.hero-visual__plus {
+  position: absolute;
+  top: 8px;
+  right: 27px;
+  color: #3a9e8e;
+  font-size: 2.7rem;
+  font-weight: 200;
+}
+
+.hero-visual__spark {
+  position: absolute;
+  color: #e9a849;
+  font-size: 1.3rem;
+}
+
+.hero-visual__spark--one {
+  top: 42px;
+  left: 37px;
+}
+
+.hero-visual__spark--two {
+  right: 15px;
+  bottom: 36px;
+  color: #429c8d;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.catalog-message {
+  margin: 16px 0;
+  color: #475569;
+}
+
+.catalog-message[role="alert"] {
+  color: #b42318;
+}
+
+.tab-button {
+  border: 1px solid #e4eae9;
+  background: #ffffff;
+  color: #5a6a6c;
+  padding: 9px 15px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button.active {
+  background: #167568;
+  color: white;
+  border-color: #167568;
+  box-shadow: 0 5px 14px rgba(22, 117, 104, 0.16);
+}
+
+.shop-section {
+  scroll-margin-top: 24px;
+}
+
+.shop-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.shop-kicker {
+  margin-bottom: 8px;
+  color: #167568;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.shop-heading h2 {
+  margin-bottom: 7px;
+  color: #1c3035;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.shop-heading > div > p:last-child {
+  color: #788789;
+  font-size: 0.94rem;
+}
+
+.product-search {
+  width: min(100%, 300px);
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid #e2e9e8;
+  border-radius: 11px;
+  background: #fff;
+  color: #819091;
+}
+
+.product-search:focus-within {
+  border-color: #7abdb2;
+  box-shadow: 0 0 0 3px rgba(22, 117, 104, 0.09);
+}
+
+.product-search svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.product-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #24383b;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.product-search input::placeholder {
+  color: #96a2a2;
+}
+
+.shop-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+  scroll-margin-top: 24px;
+}
+
+.product-count {
+  flex: 0 0 auto;
+  color: #879393;
+  font-size: 0.82rem;
+}
+
+.content-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.product-sections {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.medicine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.medicine-card {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e8eeed;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.medicine-card:hover {
+  transform: translateY(-3px);
+  border-color: #d4e5e1;
+  box-shadow: 0 12px 28px rgba(23, 66, 64, 0.08);
+}
+
+.medicine-image-wrap {
+  height: 170px;
+  position: relative;
+  overflow: hidden;
+  background: #f0f6f4;
+}
+
+.medicine-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
+}
+
+.medicine-card:hover .medicine-image {
+  transform: scale(1.04);
+}
+
+.medicine-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #4d716a;
+  font-size: 0.69rem;
+  font-weight: 700;
+}
+
+.medicine-info {
+  padding: 15px;
+}
+
+.medicine-info h3 {
+  min-height: 24px;
+  margin-bottom: 7px;
+  color: #273b3e;
+  font-size: 1rem;
+  letter-spacing: -0.015em;
+}
+
+.medicine-stock {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 16px;
+  color: #71817f;
+  font-size: 0.75rem;
+}
+
+.stock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34a982;
+}
+
+.stock-dot--empty {
+  background: #d06a62;
+}
+
+.medicine-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.price {
+  font-weight: 700;
+  color: #1e393b;
+  font-size: 1.04rem;
+}
+
+.medicine-meta button {
+  border: 1px solid #dce9e6;
+  background: #f3faf8;
+  color: #167568;
+  padding: 9px 11px;
+  border-radius: 9px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.medicine-meta button:hover {
+  background: #e4f4ef;
+  border-color: #c5e3dc;
+}
+
+.medicine-meta button:disabled {
+  border-color: #e5e9e8;
+  background: #f1f3f3;
+  color: #929d9c;
+  cursor: not-allowed;
+}
+
+.empty-products {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: 1px dashed #dce6e3;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.empty-products > span {
+  margin-bottom: 8px;
+  color: #167568;
+  font-size: 2.2rem;
+}
+
+.empty-products h3 {
+  margin-bottom: 7px;
+  color: #263b3d;
+}
+
+.empty-products p {
+  color: #71817f;
+  font-size: 0.88rem;
+}
+
+.empty-products button {
+  margin-top: 16px;
+  padding: 9px 13px;
+  border: 0;
+  border-radius: 9px;
+  background: #e8f5f1;
+  color: #167568;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.app-shell[data-theme="dark"] {
+  background: #0b1220;
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .hero-banner {
+  background: linear-gradient(135deg, #142338, #102a31);
+  border-color: #25465a;
+}
+
+.app-shell[data-theme="dark"] .hero-banner h1,
+.app-shell[data-theme="dark"] .shop-heading h2 {
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .hero-badge,
+.app-shell[data-theme="dark"] .hero-visual__card {
+  border-color: #334155;
+  background: #1e293b;
+  color: #cbd5e1;
+}
+
+.app-shell[data-theme="dark"] .hero-assurance {
+  color: #a8b6c9;
+}
+
+.app-shell[data-theme="dark"] .hero-visual__orb {
+  border-color: rgba(94, 234, 212, 0.14);
+  background: rgba(15, 23, 42, 0.18);
+}
+
+.app-shell[data-theme="dark"] .shop-kicker {
+  color: #5eead4;
+}
+
+.app-shell[data-theme="dark"] .empty-products button {
+  background: #173b41;
+  color: #78d1bd;
+}
+
+.app-shell[data-theme="dark"] .hero-text,
+.app-shell[data-theme="dark"] .catalog-message {
+  color: #a8b6c9;
+}
+
+.app-shell[data-theme="dark"] .category-section,
+.app-shell[data-theme="dark"] .cart-panel,
+.app-shell[data-theme="dark"] .admin-login-box,
+.app-shell[data-theme="dark"] .stat-card,
+.app-shell[data-theme="dark"] .panel-box {
+  background: #111c2d;
+  border-color: #29384d;
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .medicine-card,
+.app-shell[data-theme="dark"] .cart-item {
+  background: #172337;
+  border-color: #304057;
+}
+
+.app-shell[data-theme="dark"] .shop-heading h2,
+.app-shell[data-theme="dark"] .medicine-info h3,
+.app-shell[data-theme="dark"] .empty-products h3 {
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .shop-heading > div > p:last-child,
+.app-shell[data-theme="dark"] .product-count,
+.app-shell[data-theme="dark"] .medicine-stock,
+.app-shell[data-theme="dark"] .empty-products p {
+  color: #a8b6c9;
+}
+
+.app-shell[data-theme="dark"] .product-search {
+  border-color: #394a61;
+  background: #111c2d;
+  color: #a8b6c9;
+}
+
+.app-shell[data-theme="dark"] .product-search input {
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .medicine-image-wrap {
+  background: #202e3d;
+}
+
+.app-shell[data-theme="dark"] .medicine-image {
+  mix-blend-mode: normal;
+}
+
+.app-shell[data-theme="dark"] .medicine-category {
+  border-color: #3c4d5e;
+  background: rgba(17, 28, 45, 0.92);
+  color: #a9d8ce;
+}
+
+.app-shell[data-theme="dark"] .medicine-meta button {
+  border-color: #35625c;
+  background: #173b41;
+  color: #78d1bd;
+}
+
+.app-shell[data-theme="dark"] .medicine-meta button:disabled {
+  border-color: #394a61;
+  background: #29384d;
+  color: #a8b6c9;
+}
+
+.app-shell[data-theme="dark"] .empty-products {
+  border-color: #394a61;
+}
+
+.app-shell[data-theme="dark"] .price,
+.app-shell[data-theme="dark"] .cart-item-name,
+.app-shell[data-theme="dark"] .cart-row,
+.app-shell[data-theme="dark"] .cart-footer,
+.app-shell[data-theme="dark"] .admin-login-box h2,
+.app-shell[data-theme="dark"] .admin-panel-header h2,
+.app-shell[data-theme="dark"] .stat-card strong,
+.app-shell[data-theme="dark"] .stock-chart-totals strong,
+.app-shell[data-theme="dark"] .stock-chart-category,
+.app-shell[data-theme="dark"] .stock-chart-legend strong,
+.app-shell[data-theme="dark"] .box-header h3,
+.app-shell[data-theme="dark"] .product-table td {
+  color: #e2e8f0 !important;
+}
+
+.app-shell[data-theme="dark"] .tab-button {
+  background: #111c2d;
+  border-color: #394a61;
+  color: #cbd5e1;
+}
+
+.app-shell[data-theme="dark"] .tab-button.active {
+  background: #167568;
+  border-color: #167568;
+  color: #fff;
+}
+
+.app-shell[data-theme="dark"] .admin-page {
+  background: linear-gradient(135deg, #0b1220, #111c2d);
+}
+
+.app-shell[data-theme="dark"] .admin-login-box label,
+.app-shell[data-theme="dark"] .login-header p,
+.app-shell[data-theme="dark"] .product-table th,
+.app-shell[data-theme="dark"] .stock-chart-totals span,
+.app-shell[data-theme="dark"] .stock-chart-legend li > span:not(.stock-chart-swatch),
+.app-shell[data-theme="dark"] .cart-item-qty,
+.app-shell[data-theme="dark"] .empty-cart {
+  color: #a8b6c9;
+}
+
+.app-shell[data-theme="dark"] .login-form input,
+.app-shell[data-theme="dark"] .product-form input,
+.app-shell[data-theme="dark"] .product-form select,
+.app-shell[data-theme="dark"] .product-table input {
+  background: #0b1220;
+  border-color: #394a61;
+  color: #e2e8f0;
+}
+
+.app-shell[data-theme="dark"] .secondary-btn {
+  background: #334155;
+  color: #f8fafc;
+}
+
+@media (max-width: 1100px) {
+  .medicine-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-layout {
+    flex-direction: column;
+  }
+
+  .cart-panel {
+    width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-content {
+    padding: 22px 16px 44px;
+  }
+
+  .hero-banner {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    padding: 34px 28px 24px;
+    margin-bottom: 38px;
+  }
+
+  .hero-visual {
+    min-height: 210px;
+    margin-top: 10px;
+  }
+
+  .hero-visual__orb {
+    width: 185px;
+    height: 185px;
+  }
+
+  .hero-visual__card {
+    width: 125px;
+    height: 145px;
+  }
+
+  .hero-visual__icon {
+    width: 62px;
+    height: 62px;
+    font-size: 2.2rem;
+  }
+
+  .shop-heading {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .product-search {
+    width: 100%;
+  }
+
+  .shop-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-count {
+    order: -1;
+  }
+
+  .medicine-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-banner h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .medicine-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-assurance {
+    gap: 9px 14px;
+    flex-direction: column;
+  }
+
+  .medicine-image-wrap {
+    height: 190px;
+  }
+}
