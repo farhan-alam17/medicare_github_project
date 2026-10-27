@@ -6,6 +6,7 @@ import Footer from './component/footer'
 import Admin from './pages/Admin'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import API_BASE_URL from './api'
 
 function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
@@ -22,7 +23,7 @@ function App() {
     if (adminView !== 'home') return undefined
 
     let isCurrent = true
-    fetch('/api/products')
+    fetch(`${API_BASE_URL}/api/products`)
       .then(async (response) => {
         const data = await response.json()
         if (!response.ok) {

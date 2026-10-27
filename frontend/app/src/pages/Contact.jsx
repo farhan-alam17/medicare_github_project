@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Contact.css'
+import API_BASE_URL from '../api'
 
 const contactEmail = 'alamfarhan3304@gmail.com'
 
@@ -17,7 +18,7 @@ function Contact({ onBrowseShop }) {
     setSubmissionError(false)
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(Object.fromEntries(formData.entries())),

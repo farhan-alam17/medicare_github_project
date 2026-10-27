@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Admin.css'
+import API_BASE_URL from '../api'
 
 function Admin({ view, onLogin, onBackToHome }) {
   const [email, setEmail] = useState('')
@@ -16,7 +17,7 @@ function Admin({ view, onLogin, onBackToHome }) {
   })
 
   const apiRequest = async (path, options = {}, authToken = token) => {
-    const response = await fetch(`/api${path}`, {
+    const response = await fetch(`${API_BASE_URL}/api${path}`, {
       ...options,
       headers: {
         ...(options.body ? { 'Content-Type': 'application/json' } : {}),
@@ -51,7 +52,7 @@ function Admin({ view, onLogin, onBackToHome }) {
     setIsLoading(true)
 
     try {
-      const response = await fetch('/api/admin/login', {
+      const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
