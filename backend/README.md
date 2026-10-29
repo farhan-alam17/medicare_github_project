@@ -3,13 +3,24 @@
 ## Setup
 
 1. Install dependencies with `npm install`.
-2. Copy `.env.example` to `.env`, set a private admin password, and configure
+2. Copy `.env.example` to `.env`, replace the MongoDB username, password, and
+   cluster host in `MONGODB_URI`, set a private admin password, and configure
    the contact email SMTP settings.
-3. Make sure MongoDB is running and `MONGODB_URI` points to it.
+3. In MongoDB Atlas, confirm the database user/password are valid and that the
+   network access list permits connections from Render. In Render, set
+   `MONGODB_URI` under the backend service's Environment settings to the same
+   connection string. URL-encode special characters in the password. Never
+   commit real credentials.
 4. Start the API with `npm run dev` (or `npm start`).
 5. Start the frontend from `frontend/app` with `npm run dev`.
 
-The API listens on port 5001 by default. Vite proxies `/api` requests to it.
+The API listens on port 5001 by default. The frontend currently sends API
+requests to `https://medicare-github-project.onrender.com`.
+Check `https://medicare-github-project.onrender.com/api/health` after deploy:
+`database` must be `connected` before the product route can succeed. If it is
+`disconnected`, inspect the backend service logs in Render for the MongoDB
+connection error, verify the `MONGODB_URI` environment variable, and redeploy
+after correcting it.
 The first successful MongoDB connection seeds the product collection if it is
 empty. Admin sessions expire after eight hours and are held in server memory.
 The storefront reads its catalog from MongoDB through the public product route;
